@@ -1,4 +1,3 @@
-import { nanoid } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { betterAuth } from "better-auth/minimal";
 import { nextCookies } from "better-auth/next-js";
@@ -7,8 +6,11 @@ import {
   lastLoginMethod,
   organization,
 } from "better-auth/plugins";
+import { customAlphabet } from "nanoid";
 import { db } from "@/lib/db/drizzle";
 import { redis } from "@/lib/redis";
+
+const nanoid = customAlphabet("abcdefghijklmnopqrstuvwxyz0123456789", 6);
 
 export const auth = betterAuth({
   database: drizzleAdapter(db, {
