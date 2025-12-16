@@ -75,7 +75,7 @@ function OrganizationTrigger({
       {...props}
       className={cn(
         "data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground",
-        isSwitching ? "cursor-not-allowed opacity-70" : ""
+        isSwitching ? "cursor-not-allowed opacity-70" : "",
         props.className
       )}
       size="lg"
