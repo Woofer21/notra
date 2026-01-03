@@ -8,6 +8,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
@@ -222,14 +223,12 @@ export function CreateOrgModal({ open, onOpenChange }: CreateOrgModalProps) {
           </div>
 
           <DialogFooter>
-            <Button
+            <DialogClose
               disabled={isCreating}
-              onClick={() => onOpenChange(false)}
-              type="button"
-              variant="outline"
+              render={<Button variant="outline" />}
             >
               Cancel
-            </Button>
+            </DialogClose>
             <Button disabled={isCreating} type="submit">
               {isCreating ? "Creating..." : "Create Organization"}
             </Button>

@@ -8,10 +8,10 @@ import { isValidElement, useState } from "react";
 import { toast } from "sonner";
 import { useOrganizationsContext } from "@/components/providers/organization-provider";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
-  DialogAction,
-  DialogCancel,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
@@ -247,10 +247,15 @@ export function AddIntegrationDialog({
               </form.Field>
             </div>
             <DialogFooter>
-              <DialogCancel disabled={mutation.isPending}>Cancel</DialogCancel>
+              <DialogClose
+                disabled={mutation.isPending}
+                render={<Button variant="outline" />}
+              >
+                Cancel
+              </DialogClose>
               <form.Subscribe selector={(state) => [state.canSubmit]}>
                 {([canSubmit]) => (
-                  <DialogAction
+                  <Button
                     disabled={!canSubmit || mutation.isPending}
                     onClick={(e) => {
                       e.preventDefault();
@@ -259,7 +264,7 @@ export function AddIntegrationDialog({
                     type="button"
                   >
                     {mutation.isPending ? "Adding..." : "Add Integration"}
-                  </DialogAction>
+                  </Button>
                 )}
               </form.Subscribe>
             </DialogFooter>

@@ -9,8 +9,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
-  DialogAction,
-  DialogCancel,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
@@ -232,11 +231,13 @@ export function AddRepositoryDialog({
       {trigger !== undefined && isValidElement(trigger) ? (
         <DialogTrigger render={trigger as React.ReactElement} />
       ) : (
-        <DialogTrigger>
-          <Button size="sm" variant="outline">
-            Add Repository
-          </Button>
-        </DialogTrigger>
+        <DialogTrigger
+          render={
+            <Button size="sm" variant="outline">
+              Add Repository
+            </Button>
+          }
+        />
       )}
       <DialogContent>
         <DialogHeader>
@@ -311,10 +312,15 @@ export function AddRepositoryDialog({
             </form.Field>
           </div>
           <DialogFooter>
-            <DialogCancel disabled={mutation.isPending}>Cancel</DialogCancel>
+            <DialogClose
+              disabled={mutation.isPending}
+              render={<Button variant="outline" />}
+            >
+              Cancel
+            </DialogClose>
             <form.Subscribe selector={(state) => [state.canSubmit]}>
               {([canSubmit]) => (
-                <DialogAction
+                <Button
                   disabled={!canSubmit || mutation.isPending || loadingRepos}
                   onClick={(e) => {
                     e.preventDefault();
@@ -323,7 +329,7 @@ export function AddRepositoryDialog({
                   type="button"
                 >
                   {mutation.isPending ? "Adding..." : "Add Repository"}
-                </DialogAction>
+                </Button>
               )}
             </form.Subscribe>
           </DialogFooter>

@@ -5,10 +5,10 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import type React from "react";
 import { isValidElement, useState } from "react";
 import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
-  DialogAction,
-  DialogCancel,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
@@ -165,10 +165,15 @@ export function EditIntegrationDialog({
               </form.Field>
             </div>
             <DialogFooter>
-              <DialogCancel disabled={mutation.isPending}>Cancel</DialogCancel>
+              <DialogClose
+                disabled={mutation.isPending}
+                render={<Button variant="outline" />}
+              >
+                Cancel
+              </DialogClose>
               <form.Subscribe selector={(state) => [state.canSubmit]}>
                 {([canSubmit]) => (
-                  <DialogAction
+                  <Button
                     disabled={!canSubmit || mutation.isPending}
                     onClick={(e) => {
                       e.preventDefault();
@@ -177,7 +182,7 @@ export function EditIntegrationDialog({
                     type="button"
                   >
                     {mutation.isPending ? "Saving..." : "Save Changes"}
-                  </DialogAction>
+                  </Button>
                 )}
               </form.Subscribe>
             </DialogFooter>
