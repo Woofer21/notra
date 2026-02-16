@@ -1,10 +1,10 @@
 import { Client as QStashClient } from "@upstash/qstash";
 import { Client as WorkflowClient } from "@upstash/workflow";
-import type { TriggerSourceConfig } from "@/types/triggers";
 import type {
   CreateQstashScheduleProps,
   WorkflowDelay,
 } from "@/types/triggers/qstash";
+import type { TriggerSourceConfig } from "@/types/triggers/triggers";
 import { getConfiguredAppUrl, requireConfiguredAppUrl } from "@/utils/url";
 
 function getQstashToken() {
