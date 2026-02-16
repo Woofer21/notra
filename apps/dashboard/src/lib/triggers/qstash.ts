@@ -3,8 +3,8 @@ import { Client as WorkflowClient } from "@upstash/workflow";
 import type {
   CreateQstashScheduleProps,
   WorkflowDelay,
-} from "@/types/triggers/qstash";
-import type { TriggerSourceConfig } from "@/types/triggers/triggers";
+} from "@/types/lib/triggers/qstash";
+import type { TriggerSourceConfig } from "@/types/lib/triggers/triggers";
 import { getConfiguredAppUrl, requireConfiguredAppUrl } from "@/utils/url";
 
 function getQstashToken() {

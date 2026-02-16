@@ -2,7 +2,7 @@ import type { IntegrationType } from "@/schemas/integrations";
 import type {
   IntegrationFetcher,
   IntegrationsResponse,
-} from "@/types/services/integrations";
+} from "@/types/lib/services/integrations";
 import { getGitHubIntegrationsByOrganization } from "./github-integration";
 
 const integrationFetchers: Partial<

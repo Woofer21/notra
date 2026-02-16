@@ -6,7 +6,7 @@ import {
   WelcomeEmail,
 } from "@notra/email";
 import type { Resend } from "resend";
-import type { EmailResult, SendInviteEmailProps } from "@/types/email/send";
+import type { EmailResult, SendInviteEmailProps } from "@/types/lib/email/send";
 
 // --- Retry & Idempotency ---
 

@@ -15,7 +15,7 @@ import { configureTriggerBodySchema } from "@/schemas/integrations";
 import type {
   TriggerSourceConfig,
   TriggerTarget,
-} from "@/types/triggers/triggers";
+} from "@/types/lib/triggers/triggers";
 
 const nanoid = customAlphabet("abcdefghijklmnopqrstuvwxyz0123456789", 16);
 

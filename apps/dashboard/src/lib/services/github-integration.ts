@@ -15,7 +15,7 @@ import type {
   ConfigureOutputParams,
   CreateGitHubIntegrationParams,
   WebhookConfig,
-} from "@/types/services/integrations";
+} from "@/types/lib/services/integrations";
 import { getConfiguredAppUrl } from "@/utils/url";
 import { createOctokit } from "../octokit";
 

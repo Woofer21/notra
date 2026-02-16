@@ -6,7 +6,7 @@ import { eq } from "drizzle-orm";
 import { cookies, headers } from "next/headers";
 import { notFound, redirect } from "next/navigation";
 import { auth } from "@/lib/auth/server";
-import type { InvitationResponse } from "@/types/auth/actions";
+import type { InvitationResponse } from "@/types/lib/auth/actions";
 import { LAST_VISITED_ORGANIZATION_COOKIE } from "@/utils/constants";
 
 export async function validateOrganizationAccess(slug: string) {

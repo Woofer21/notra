@@ -15,7 +15,7 @@ import type {
   GithubProcessedEvent,
   WebhookContext,
   WebhookResult,
-} from "@/types/webhooks/webhooks";
+} from "@/types/lib/webhooks/webhooks";
 
 const DELIVERY_TTL_SECONDS = 60 * 60 * 24;
 
