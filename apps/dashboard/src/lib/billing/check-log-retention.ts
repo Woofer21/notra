@@ -1,4 +1,4 @@
-import type { LogRetentionDays } from "@/lib/webhooks/logging";
+import type { LogRetentionDays } from "@/types/lib/webhooks/webhooks";
 import { FEATURES } from "@/utils/constants";
 import { autumn } from "./autumn";
 
